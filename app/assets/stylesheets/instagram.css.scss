@@ -8,13 +8,20 @@
 }
 
 
-
-
 .image {
   display: inline-block;
   width: 25%;
 }
 
+.id {
+  font-style: italic;
+  margin: 0 10px;
+}
+
+.word {
+font-weight: bold;
+
+}
 .profile {
   width: 125px;
   height: 125px;
@@ -24,6 +31,8 @@
   display: inline-block;
   width: 25%;
   vertical-align: top;
+  color: black;
+
 }
 
 .controls {

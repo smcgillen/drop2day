@@ -2,15 +2,15 @@
   <% @user.follows.each do |user| %>
   <ul>
     <div class= 'image'>
-      <img class= 'profile' src="<%= user["profile_picture"] %>">
+      <a href="https://instagram.com/<%= user["username"] %>"><img class= 'profile' src="<%= user["profile_picture"] %>"></a>
     </div>
     <div class= 'details'>
       <ul>
-        <li>Username- <%= user["username"] %></li>
-        <li>Name- <%= user["full_name"] %></li>
-        <li>Pics- <%= user["counts"]["media"] %></li>
-        <li>Followers- <%= user["counts"]["followed_by"] %></li>
-        <li>Following- <%= user["counts"]["follows"] %></li>
+        <li><span class="word">Username:  </span><span class="id"><%= user["username"] %></span></li>
+        <li><span class="word">Name: </span> <span class="id"><%= user["full_name"] %></span></li>
+        <li><span class="word">Pics: </span> <span class="id"><%= number_with_delimiter user["counts"]["media"] %></span></li>
+        <li><span class="word">Followers: </span> <span class="id"><%= number_with_delimiter user["counts"]["followed_by"] %></span></li>
+        <li><span class="word">Following: </span> <span class="id"><%= number_with_delimiter user["counts"]["follows"] %></span></li>
       </ul>
     </div>
     <div class='controls'>
