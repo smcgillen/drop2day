@@ -1,0 +1,22 @@
+<div class='home toggle-light'>
+  <% @user.follows.each do |user| %>
+  <ul>
+    <div class= 'image'>
+      <img class= 'profile' src="<%= user["profile_picture"] %>">
+    </div>
+    <div class= 'details'>
+      <ul>
+        <li>Username- <%= user["username"] %></li>
+        <li>Name- <%= user["full_name"] %></li>
+        <li>Pics- <%= user["counts"]["media"] %></li>
+        <li>Followers- <%= user["counts"]["followed_by"] %></li>
+        <li>Following- <%= user["counts"]["follows"] %></li>
+      </ul>
+    </div>
+    <div class='controls'>
+      <!--input class="toggle" id="Unfollow" name="ByeBye" type="checkbox" value="1" /-->
+      <div class="toggle"></div>
+    </div>
+  </ul>
+<% end %>
+</div>

@@ -18,8 +18,19 @@ class InstagramController < ApplicationController
 
   def success
     self.setup_instagram
+    # binding.pry
+  end
+
+  def pry
+    self.setup_instagram
     binding.pry
   end
+
+  def edit
+    @user = User.new
+  end
+
+
 
   def setup_instagram
     Instagram.configure do |config|

@@ -1,3 +1,53 @@
 // Place all the styles related to the instagram controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home {
+  margin: auto;
+  width: 960px;
+}
+
+
+
+
+.image {
+  display: inline-block;
+  width: 25%;
+}
+
+.profile {
+  width: 125px;
+  height: 125px;
+}
+
+.details {
+  display: inline-block;
+  width: 25%;
+  vertical-align: top;
+}
+
+.controls {
+  display: inline-block;
+  width: 33%;
+}
+
+ul {
+  list-style: none;
+}
+
+.toggle-light .toggle-select .toggle-inner .active {
+  background-color: red;
+}
+
+.toggle-light .toggle-select .toggle-inner .toggle-on.active {
+  background-color: green;
+}
+
+
+/*.green {
+  background-color: green;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  width: 120px;
+  }*/

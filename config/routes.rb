@@ -5,5 +5,7 @@ Insta::Application.routes.draw do
   get '/insta/connect' => 'instagram#connect'
   get '/callback' => 'instagram#callback'
 
-  get '/success' => 'instagram#success'
+  get '/success' => 'instagram#edit'
+  get '/pry' => 'instagram#pry'
+
 end
