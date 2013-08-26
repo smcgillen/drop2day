@@ -8,4 +8,7 @@ Insta::Application.routes.draw do
   get '/success' => 'instagram#edit'
   get '/pry' => 'instagram#pry'
 
+  get '/follow/:id' => 'instagram#follow'
+  get '/unfollow/:id' => 'instagram#unfollow'
+
 end

@@ -6,7 +6,7 @@ class InstagramController < ApplicationController
 
   def connect
     self.setup_instagram
-    redirect_to Instagram.authorize_url(:redirect_uri => 'http://localhost:3000/callback')
+    redirect_to Instagram.authorize_url(:redirect_uri => 'http://localhost:3000/callback', :scope => 'relationships')
   end
 
   def callback
@@ -28,6 +28,19 @@ class InstagramController < ApplicationController
 
   def edit
     @user = User.new
+    @cult_members = @user.followed_by.map(&:username)
+  end
+
+  def follow
+    self.setup_instagram
+    Instagram.follow_user(params[:id])
+    render :json => {status: 'ok'}
+  end
+
+  def unfollow
+    self.setup_instagram
+    Instagram.unfollow_user(params[:id])
+    render :json => {status: 'ok'}
   end
 
 
