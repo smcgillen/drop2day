@@ -13,13 +13,17 @@
         <li><span class="word">Following: </span> <span class="id"><%= number_with_delimiter user["counts"]["follows"] %></span></li>
         <!--li><span class="userid">ID:  </span><span class="id"><%= user["id"] %></span></li-->
         <% if @cult_members.index(user["username"]) %>
-        <li>Following you</li>
+        <li>Following Back</li>
         <% end %>
       </ul>
     </div>
     <div class='controls'>
       <!--input class="toggle" id="Unfollow" name="ByeBye" type="checkbox" value="1" /-->
-      <div class="toggle"></div>
+      <div class="buttons">
+        <span class="follow  active">Following</span>
+        <span class="unfollow">Unfollow</span>
+      </div>
+
     </div>
   </ul>
 <% end %>

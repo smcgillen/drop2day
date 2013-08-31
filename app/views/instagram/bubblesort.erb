@@ -1,0 +1,26 @@
+def selection_sort(arr)
+    for i in 0...arr.length
+    min = arr[i]
+    min_i = i
+
+    for j in i ...arr.length
+      if arr[j].to_i < min
+        min = arr[j]
+        min_i = j
+      end
+    end
+
+    arr[min_i], arr[i] = arr[i], arr[min_i]
+  end
+
+  arr
+end
+
+
+c = [ 3,6,9,3,9,5,7,2,]
+
+print selection_sort(c)
+
+
+
+

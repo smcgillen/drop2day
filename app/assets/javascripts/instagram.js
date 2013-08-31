@@ -23,18 +23,16 @@ var follow = function(el){
 }
 
 
-  $('.toggle').toggles({
-    type: 'select',
-    text: {
-      on: 'FOLLOW',
-      off: 'UNFOLLOW'
-    },
-    width: 90
-  }).on('toggle', function (e, active) {
-    if (active) {
+  $('.buttons span').on('click', function (e) {
+    if ($(this).is('.unfollow')) {
       unfollow(this);
     } else {
       follow(this);
     }
+    $(this).siblings().andSelf().toggleClass('active');
+  });
+
+  $('.buttons').hover(function () {
+      $(this).find('span').toggleClass('active');
   });
 });
