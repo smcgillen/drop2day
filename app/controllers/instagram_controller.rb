@@ -6,12 +6,12 @@ class InstagramController < ApplicationController
 
   def connect
     self.setup_instagram
-    redirect_to Instagram.authorize_url(:redirect_uri => 'http://localhost:3000/callback', :scope => 'relationships')
+    redirect_to Instagram.authorize_url(:redirect_uri => 'http://instadrop.herokuapp.com/callback', :scope => 'relationships')
   end
 
   def callback
     self.setup_instagram
-    response = Instagram.get_access_token(params[:code], :redirect_uri => 'http://localhost:3000/callback')
+    response = Instagram.get_access_token(params[:code], :redirect_uri => 'http://instadrop.herokuapp.com/callback')
     session[:access_token] = response.access_token
     redirect_to '/success'
   end
