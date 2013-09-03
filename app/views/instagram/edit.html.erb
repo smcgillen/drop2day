@@ -1,27 +1,31 @@
 <div class='home toggle-light'>
   <% @user.follows.each do |user| %>
-  <ul data-instagram-id="<%= user["id"] %>">
+  <ul data-instagram-id="<%= user[:id] %>">
     <div class= 'image'>
-      <a href="https://instagram.com/<%= user["username"] %>"><img class= 'profile' src="<%= user["profile_picture"] %>"></a>
+      <a href="https://instagram.com/<%= user[:username] %>"><img class= 'profile' src="<%= user[:profile_picture] %>"></a>
     </div>
-    <div class= 'details'>
+    <!-- <div> -->
       <ul>
-        <li><span class="word">Username:  </span><span class="id"><%= user["username"] %></span></li>
-        <li><span class="word">Name: </span> <span class="id"><%= user["full_name"] %></span></li>
-        <li><span class="word">Pics: </span> <span class="id"><%= number_with_delimiter user["counts"]["media"] %></span></li>
-        <li><span class="word">Followers: </span> <span class="id"><%= number_with_delimiter user["counts"]["followed_by"] %></span></li>
-        <li><span class="word">Following: </span> <span class="id"><%= number_with_delimiter user["counts"]["follows"] %></span></li>
-        <!--li><span class="userid">ID:  </span><span class="id"><%= user["id"] %></span></li-->
-        <% if @cult_members.index(user["username"]) %>
-        <li>Following Back</li>
-        <% end %>
+        <div class= 'details'>
+          <li><span class="word">Username:  </span><span class="id"><%= user[:username] %></span></li>
+          <li><span class="word">Name: </span> <span class="id"><%= user[:full_name] %></span></li>
+          <li><span class="word">Posts: </span> <span class="id"><%= number_with_delimiter user[:counts][:media] %></span></li>
+          <li><span class="word">Followers: </span> <span class="id"><%= number_with_delimiter user[:counts][:followed_by] %></span></li>
+          <li><span class="word">Following: </span><span class="id"><%= number_with_delimiter user[:counts][:follows] %></span></li>
+        </div>
+          <!--li><span class="userid">ID:  </span><span class="id"><%= user[:id] %></span></li-->
+        <div class= 'yes'>
+          <% if @cult_members.index(user[:username]) %>
+          <li><span>Follows You</span></li>
+          <% end %>
+        </div>
       </ul>
-    </div>
+    <!-- </div> -->
     <div class='controls'>
       <!--input class="toggle" id="Unfollow" name="ByeBye" type="checkbox" value="1" /-->
       <div class="buttons">
         <span class="follow  active">Following</span>
-        <span class="unfollow">Unfollow</span>
+        <span class="unfollow">Drop</span>
       </div>
 
     </div>

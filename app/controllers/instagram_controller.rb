@@ -16,17 +16,16 @@ class InstagramController < ApplicationController
     redirect_to '/success'
   end
 
-  def success
-    self.setup_instagram
-    # binding.pry
-  end
-
   def pry
     self.setup_instagram
     binding.pry
   end
 
-  def edit
+  def success
+    @avatar = Instagram.user()["profile_picture"]
+  end
+
+  def load
     @user = User.new
     @cult_members = @user.followed_by.map(&:username)
   end
