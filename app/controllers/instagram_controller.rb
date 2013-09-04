@@ -54,6 +54,12 @@ class InstagramController < ApplicationController
     end
   end
 
+  def logout
+    self.setup_instagram
+    session[:access_token] = nil
+    redirect_to root_path
+  end
+
 end
 
 
