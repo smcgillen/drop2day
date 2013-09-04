@@ -2,6 +2,9 @@ class InstagramController < ApplicationController
 
   # Control passes here once authenticated.
   def index
+    self.setup_instagram
+
+    @popular = Instagram.media_popular
   end
 
   def connect
@@ -44,7 +47,9 @@ class InstagramController < ApplicationController
     render :json => {status: 'ok'}
   end
 
-
+  def media_popular
+    @popular = Instagram.media_popular
+  end
 
   def setup_instagram
     Instagram.configure do |config|

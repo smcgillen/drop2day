@@ -1,1 +1,17 @@
-<a href="/insta/connect">Connect</a>
+<a href="/insta/connect">Sing in with Instagram</a>
+
+<div class="open">
+  <% @popular.each do |media| %>
+
+
+    <p><%= image_tag(media.user.profile_picture, :style => 'width: 50px;') %></p>
+    <p><%= media.user.username %></p>
+
+    <p><%= link_to image_tag(media.images.low_resolution.url), media.link %></p>
+
+
+  <% end %>
+
+</div>
+
+
