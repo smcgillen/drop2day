@@ -22,6 +22,7 @@ class InstagramController < ApplicationController
   end
 
   def success
+
     @avatar = Instagram.user()["profile_picture"]
   end
 
@@ -46,10 +47,27 @@ class InstagramController < ApplicationController
 
   def setup_instagram
     Instagram.configure do |config|
-      config.client_id = "b83395640aec496fbe4eb7f340fde84a"
-      config.client_secret = "a97872f648f546b78eca87518a162074"
+      config.client_id = "93d9fdaeb4a44f89a1b1a3259922a21f"
+      config.client_secret = "4fcb7701013b4c1a8937798f792afa88"
       config.access_token = session[:access_token] if session[:access_token]
     end
   end
 
 end
+
+
+
+# CLIENT INFO
+# CLIENT ID 93d9fdaeb4a44f89a1b1a3259922a21f
+# CLIENT SECRET 4fcb7701013b4c1a8937798f792afa88
+# WEBSITE URL https://localhost:3000
+# REDIRECT URI  https://localhost:3000
+
+
+
+
+
+
+
+
+
