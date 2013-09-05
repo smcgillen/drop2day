@@ -84,7 +84,31 @@ ul {
   background-color: green;
 }
 
+
 .buttons span {
+    display: block;
+    border-radius: 1em;
+    width: 10em;
+    padding: 0.5em;
+    text-align: center;
+    color: white;
+    display: none;
+}
+
+.buttons span.active {
+    display: block;
+}
+
+
+.follow {
+    background-color: blue;
+}
+
+.unfollow {
+    background-color: red;
+}
+
+/*.buttons span {
     display: block;
     border-radius: 1em;
     width: 10em;
@@ -104,7 +128,7 @@ ul {
 
 .unfollow {
     background-color: red;
-}
+}*/
 
 
 .nav {
