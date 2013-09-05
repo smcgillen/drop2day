@@ -7,6 +7,7 @@ Insta::Application.routes.draw do
 
   get '/success' => 'instagram#success'
   get '/load' => 'instagram#load'
+  get '/load/:cursor' => 'instagram#load'
   get '/pry' => 'instagram#pry'
   get '/logout' => 'instagram#logout'
 

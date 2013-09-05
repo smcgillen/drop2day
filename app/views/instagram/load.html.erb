@@ -1,4 +1,5 @@
 <div class='home toggle-light'>
+  <input type="hidden" id="cursor" value="<%= @user.cursor %>">
   <% @user.follows.each do |user| %>
   <ul data-instagram-id="<%= user["id"] %>">
     <div class= 'image'>
@@ -6,7 +7,7 @@
     </div>
     <div class= 'details'>
       <ul>
-        <li><span class="word">Username:  </span><span class="id"><%= user["username"] %></span></li>
+        <li><span class="word">Username:  </span><span class="id"><%= user["username"] %></span><br></li>
         <li><span class="word">Name: </span> <span class="id"><%= user["full_name"] %></span></li>
         <li><span class="word">Posts: </span> <span class="id"><%= number_with_delimiter user["counts"]["media"] %></span></li>
         <li><span class="word">Followers: </span> <span class="id"><%= number_with_delimiter user["counts"]["followed_by"] %></span></li>

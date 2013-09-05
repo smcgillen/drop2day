@@ -31,7 +31,8 @@ class InstagramController < ApplicationController
 
   def load
     self.setup_instagram
-    @user = User.new
+    cursor = params[:cursor] || -1
+    @user = User.new(cursor)
     @cult_members = @user.followed_by.map(&:username)
     render "load", :layout => false
 
