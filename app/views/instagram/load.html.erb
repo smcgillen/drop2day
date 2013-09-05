@@ -1,5 +1,4 @@
 <div class='home toggle-light'>
-  <input type="hidden" id="cursor" value="<%#= @user.cursor %>">
   <% @user.follows.each do |user| %>
   <ul data-instagram-id="<%= user["id"] %>">
     <div class= 'image'>

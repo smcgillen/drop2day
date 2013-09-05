@@ -1,17 +1,15 @@
 class User
   attr_accessor :follows, :followed_by
 
-  def initialize(cursor=nil)
+  def initialize()
     @follows = []
     @followed_by = []
-    @cursor = -1
 
     if (@follows.count == 0)
-      followers = Instagram.user_follows(:count => 20, :cursor => @cursor)
+      followers = Instagram.user_follows(:count => 20)
       followers.each do |user|
         @follows << Instagram.user(user.id)
       end
-      #@cursor = Instagram.next_cursor
     end
 
     if (@followed_by.count == 0)
