@@ -9,7 +9,7 @@ $(document).ready(function () {
     method: 'GET',
     url: '/load/'
   }).done(function (html) {
-    $('#container').html($(html).find('#container').html());
+    $('#container').html(html);
   });
 });
 </script>

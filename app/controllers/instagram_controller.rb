@@ -27,6 +27,7 @@ class InstagramController < ApplicationController
   def success
     self.setup_instagram
     @avatar = Instagram.user()["profile_picture"]
+    render "success", :layout => false
   end
 
   def load
