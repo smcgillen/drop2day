@@ -6,7 +6,7 @@ class User
     @followed_by = []
 
     if (@follows.count == 0)
-      followers = Instagram.user_follows(:count => 50)
+      followers = Instagram.user_follows(:count => 10)
       followers.each do |user|
         @follows << Instagram.user(user.id)
       end
