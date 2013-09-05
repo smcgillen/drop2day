@@ -16,8 +16,13 @@ body {
 
 }
 
+li {
+  display: inline-block;
+}
 
-
+.bar-width{
+  text-align: center;
+}
 
 .image {
   display: inline-block;
@@ -93,6 +98,10 @@ ul {
     display: block;
 }
 
+.nav {
+  width: 100%;
+  position: fixed;
+}
 
 .follow {
     background-color: green;
