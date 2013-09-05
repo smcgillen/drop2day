@@ -8,11 +8,14 @@
 
     <section class="top-bar-section">
       <!-- Left Nav Section -->
-      <ul class="left">
-        <a href="/insta/connect">Sign in with Instagram</a>
+      <ul class="right">
+        <% if session[:access_token].present? %>
         <a href='/logout'>Logout</a>
-  <a href="https://twitter.com/share" class="twitter-share-button" data-text="Just Dropped my following on Instagram with this app" data-via="instadropit" data-count="none">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <% else %>
+        <a href="/insta/connect">Sign in with Instagram</a>
+        <% end %>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-text="Just Dropped my following on Instagram with this app" data-via="instadropit" data-count="none">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
       </ul>
     </section>
   </nav>
