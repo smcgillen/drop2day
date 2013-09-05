@@ -27,13 +27,14 @@ class InstagramController < ApplicationController
   def success
     self.setup_instagram
     @avatar = Instagram.user()["profile_picture"]
-    render "success", :layout => false
   end
 
   def load
     self.setup_instagram
     @user = User.new
     @cult_members = @user.followed_by.map(&:username)
+    render "load", :layout => false
+
   end
 
   def follow
