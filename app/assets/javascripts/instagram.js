@@ -32,7 +32,7 @@ var follow = function(el){
     $(this).siblings().andSelf().toggleClass('active');
   });
 
-  $('.buttons').hover(function () {
+  $(document).on('mouseenter mouseleave', '.buttons', function () {
       $(this).find('span').toggleClass('active');
   });
 });
