@@ -36,3 +36,4 @@ var follow = function(el){
       $(this).find('span').toggleClass('active');
   });
 });
+
