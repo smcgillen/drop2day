@@ -13,7 +13,7 @@
         <li><span class="word">Following: </span> <span class="id"><%= number_with_delimiter user["counts"]["follows"] %></span></li>
         <!--li><span class="userid">ID:  </span><span class="id"><%= user["id"] %></span></li-->
         <% if @cult_members.index(user["username"]) %>
-        <li>Follows You</li>
+        <li><span class="followsyou">Follows You </span></li>
         <% end %>
       </ul>
     </div>
