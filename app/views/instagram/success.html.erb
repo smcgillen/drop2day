@@ -3,14 +3,43 @@
   <iframe src="http://smcgillen.github.io/kaleidos/?n=7&clean=true&src=<%= @avatar %>" width="100%" height="1000"></iframe>
 </div>
 
+<h2>Please Hold on - Loading more users</h2>
+
 <script>
 $(document).ready(function () {
   $.ajax({
     method: 'GET',
-    url: '/load/'
+    url: '/load'
   }).done(function (html) {
+    $('#donate').fadeIn();
     $('#container').html(html);
   });
 });
 </script>
+
+<div id="donate">
+  <p>Buy me a beer</p>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+  <input type="hidden" name="cmd" value="_donations">
+  <input type="hidden" name="business" value="a7837436@gmail.com">
+  <input type="hidden" name="lc" value="AU">
+  <input type="hidden" name="item_name" value="Drop2Day - Beer Fund">
+  <input type="hidden" name="amount" value="3.00">
+  <input type="hidden" name="currency_code" value="AUD">
+  <input type="hidden" name="no_note" value="0">
+  <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest">
+  <input type="image" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+  <img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+  </form>
+
+  <a href="http://www.freecounterstat.com" target="_Blank" title="free counter">free counter</a><br/> <script type="text/javascript" src="http://counter5.statcounterfree.com/private/countertab.js?c=c861952f667ba48034f531db8b854f58"></script>
+
+
+  <a href="http://www.freecounterstat.com" title="free counter"><img src="http://counter5.statcounterfree.com/private/freecounterstat.php?c=c861952f667ba48034f531db8b854f58" border="0" title="free counter" alt="free counter"></a>
+
+</div>
+
+
+
+
 

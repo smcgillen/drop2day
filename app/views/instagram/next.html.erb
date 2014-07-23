@@ -21,7 +21,7 @@
       <!--input class="toggle" id="Unfollow" name="ByeBye" type="checkbox" value="1" /-->
       <div class="buttons">
         <span class="follow  active">Following</span>
-        <span class="unfollow">Droped</span>
+        <span class="unfollow">Drop</span>
       </div>
 
     </div>
@@ -33,10 +33,6 @@
     method: 'GET',
     url: '/load/<%= @user.next_cursor %>'
   }).done(function (html) {
-    <% if @user.next_cursor %>
-    $('#container').append(html);
-    <% else %>
     $('#container').html(html);
-    <% end %>
   });
 </script>

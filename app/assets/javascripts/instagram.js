@@ -23,7 +23,7 @@ var follow = function(el){
 }
 
 
-  $('.buttons span').on('click', function (e) {
+  $(document).on('click', '.buttons span', function (e) {
     if ($(this).is('.unfollow')) {
       unfollow(this);
     } else {
