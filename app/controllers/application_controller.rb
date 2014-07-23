@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if Rails.env.development?
       @domain_name = 'localhost:3000'
     else
-      @domain_name = 'drop2day.herokuapp.com/'
+      @domain_name = 'drop2day.herokuapp.com'
     end
   end
 end
