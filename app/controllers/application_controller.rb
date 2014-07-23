@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_action :set_domain
+  before_filter :set_domain
   def set_domain
     if Rails.env.development?
       @domain_name = 'localhost:3000'
