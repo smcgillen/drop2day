@@ -9,10 +9,10 @@ class User
       followers = Instagram.user_follows(:count => 7, :cursor => next_cursor)
       if followers.class == Array && followers.length == 2
         render :text => "Instagram have blocked us"
-        return
-      end
-      followers.each do |user|
-        @follows << Instagram.user(user.id) if user && user.respond_to(:id)
+      else
+        followers.each do |user|
+          @follows << Instagram.user(user.id) if user && user.id
+        end
       end
     end
 
