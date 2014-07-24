@@ -7,8 +7,9 @@ class User
 
     if (@follows.count == 0)
       followers = Instagram.user_follows(:count => 7, :cursor => next_cursor)
+      render :json => followers
       followers.each do |user|
-        @follows << Instagram.user(user.id) if user && user.id
+        @follows << Instagram.user(user.id) if user && user.respond_to(:id)
       end
     end
 
