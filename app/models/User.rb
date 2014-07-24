@@ -8,7 +8,7 @@ class User
     if (@follows.count == 0)
       followers = Instagram.user_follows(:count => 7, :cursor => next_cursor)
       if followers.class == Array && followers.length == 2
-        render :json => {:status => 'API blocked'}
+        render :text => "Instagram have blocked us"
         return
       end
       followers.each do |user|
